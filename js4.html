@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS task-04</title>
+  </head>
+  <body>
+    <button onclick="displayCurrentDate()">Show date</button>
+    <p><span id="date"></span></p>
+    <button onclick="displayCurrentTime()">Show time</button>
+    <p><span id="time"></span></p>
+  </body>
+  <script>
+    function displayCurrentDate() {
+      const currentDate = new Date();
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      const date = currentDate.toLocaleDateString(undefined, options);
+
+      console.log(`Current Date: ${date}`);
+      document.getElementById("date").innerHTML = "Date: " + date;
+    }
+    function displayCurrentTime() {
+      const currentDate = new Date();
+      const timeOptions = {
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: true,
+      };
+      const time = currentDate.toLocaleTimeString(undefined, timeOptions);
+      console.log(`Current time: ${time}`);
+      document.getElementById("time").innerHTML = "Time :" + time;
+    }
+  </script>
+</html>
